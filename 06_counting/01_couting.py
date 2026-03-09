@@ -22,11 +22,13 @@ cv2.drawContours(img_contours, contours, -1, (0, 255, 0), 2)
 
 # Print total number of objects found
 print(f"Total objects detected: {len(contours)}")
-
+for cnt in contours:
+    x1,y1,w,h = cv2.boundingRect(cnt)
+    cv2.rectangle(img,(x1,y1),(x1+w,y1+h),(0,23,255),1)
 # Show images
 cv2.imshow('Original', img_gray)
 cv2.imshow('Inverse', invert)
-cv2.imshow('Contours', img_contours)
+cv2.imshow('Contours', img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
