@@ -1,5 +1,5 @@
 import cv2
-import mediapipe.python as mp
+import mediapipe as mp
 
 webCam = cv2.VideoCapture(0)
 
